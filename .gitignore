@@ -5,3 +5,4 @@ presentation.html
 *.log
 nohup.out
 slides_export/
+videos_with_overlay/
