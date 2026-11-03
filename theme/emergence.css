@@ -102,3 +102,27 @@ section.fig2 .body { gap:36px; align-items:center; }
 section.fig2 .body img.fig { flex:1.35 1 0; min-width:0; max-height:100%; width:auto; object-fit:contain; }
 section.fig2 .body .plot { flex:1 1 0; min-width:0; height:100%; display:flex; align-items:center; }
 section.fig2 .body .plot svg { width:100%; max-height:100%; }
+
+/* title slide: author + affiliations */
+section.titleslide .author { font-size:40px; font-weight:700; margin:46px 0 6px; }
+section.titleslide .affil { font-size:28px; color:var(--muted); margin:0; }
+
+/* title slide: collaborators, six logos */
+section.titleslide { padding-bottom:190px; }
+section.titleslide .author { margin-top:34px; }
+section.titleslide .collab { font-size:24px; color:var(--fg); margin:22px 0 0; }
+section.titleslide .logorow img { height:84px; max-width:200px; }
+section.titleslide .logorow img.sq { height:104px; }
+
+/* AGA in the footer and on the closing slide */
+footer img[alt="AGA"] { height:30px; }
+section.closing .logorow img { height:84px; max-width:200px; }
+
+/* project-authors credit on a single line */
+section.titleslide .collab { white-space:nowrap; font-size:21px; }
+
+/* five QR codes */
+.qrs { gap:34px; }
+.qrs .q { width:190px; }
+.qrs img.qr { width:190px; height:190px; padding:12px; }
+.qrs a.n { font-size:26px; margin-top:12px; white-space:nowrap; }

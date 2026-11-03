@@ -3,7 +3,7 @@ marp: true
 theme: emergence
 paginate: true
 html: true
-footer: '<img src="./logos/sym_MediaLab.png" alt="MediaLab"><img src="./logos/sym_CityScience.png" alt="CityScience"><img src="./logos/sym_UPM.png" alt="UPM"><img src="./logos/sym_Caminos.png" alt="Caminos"><img src="./logos/sym_detektia.png" alt="detektia"><span class="who">Buildingquake · Miguel Ureña Pliego</span>'
+footer: '<img src="./logos/sym_MediaLab.png" alt="MediaLab"><img src="./logos/sym_CityScience.png" alt="CityScience"><img src="./logos/sym_UPM.png" alt="UPM"><img src="./logos/sym_Caminos.png" alt="Caminos"><img src="./logos/sym_AGA.png" alt="AGA"><img src="./logos/sym_detektia.png" alt="detektia"><span class="who">Buildingquake · Miguel Ureña and Javier Sempere</span>'
 ---
 
 <!-- _class: titleslide -->
@@ -13,7 +13,11 @@ footer: '<img src="./logos/sym_MediaLab.png" alt="MediaLab"><img src="./logos/sy
 
 ## Earthquake risk per building anywhere in the world
 
-<div class="logorow"><img class="" src="./logos/logo_MediaLab.png" alt="MediaLab"><img class="" src="./logos/logo_CityScience.png" alt="CityScience"><img class="" src="./logos/logo_UPM.png" alt="UPM"><img class="" src="./logos/logo_Caminos.png" alt="Caminos"><img class="sq" src="./logos/logo_detektia.png" alt="detektia"></div>
+<p class="author">Miguel Ureña Pliego</p>
+<p class="affil">MIT Media Lab · Universidad Politécnica de Madrid</p>
+<p class="collab">Project authors: Miguel Ureña Pliego, Javier Sempere Hernández, Advanced Geomatics (AGA) and City Science Groups</p>
+
+<div class="logorow"><img class="" src="./logos/logo_MediaLab.png" alt="MediaLab"><img class="" src="./logos/logo_CityScience.png" alt="CityScience"><img class="" src="./logos/logo_UPM.png" alt="UPM"><img class="" src="./logos/logo_Caminos.png" alt="Caminos"><img class="" src="./logos/logo_AGA.png" alt="AGA"><img class="sq" src="./logos/logo_detektia.png" alt="detektia"></div>
 
 ---
 
@@ -162,9 +166,9 @@ footer: '<img src="./logos/sym_MediaLab.png" alt="MediaLab"><img src="./logos/sy
 
 # Thank you!
 
-<div class="qrs"><div class="q"><a href="https://miguelurenapliego.github.io/BuildingquakePresentation/"><img class="qr" src="./images/qr_presentation.png"></a><a class="n" href="https://miguelurenapliego.github.io/BuildingquakePresentation/">Presentation</a></div><div class="q"><a href="https://miguelurenapliego.github.io/BuildingquakePresentation/buildingquake-tool/"><img class="qr" src="./images/qr_tool.png"></a><a class="n" href="https://miguelurenapliego.github.io/BuildingquakePresentation/buildingquake-tool/">Tool</a></div><div class="q"><a href="https://www.linkedin.com/in/miguel-urena-pliego/"><img class="qr" src="./images/qr_linkedin.png"></a><a class="n" href="https://www.linkedin.com/in/miguel-urena-pliego/">LinkedIn</a></div><div class="q"><a href="https://link.springer.com/content/pdf/10.1186/s40323-026-00323-y.pdf"><img class="qr" src="./images/qr_paper.png"></a><a class="n" href="https://link.springer.com/content/pdf/10.1186/s40323-026-00323-y.pdf">Paper</a></div></div>
+<div class="qrs"><div class="q"><a href="https://miguelurenapliego.github.io/BuildingquakePresentation/"><img class="qr" src="./images/qr_presentation.png"></a><a class="n" href="https://miguelurenapliego.github.io/BuildingquakePresentation/">Presentation</a></div><div class="q"><a href="https://miguelurenapliego.github.io/BuildingquakePresentation/buildingquake-tool/"><img class="qr" src="./images/qr_tool.png"></a><a class="n" href="https://miguelurenapliego.github.io/BuildingquakePresentation/buildingquake-tool/">Tool</a></div><div class="q"><a href="https://link.springer.com/content/pdf/10.1186/s40323-026-00323-y.pdf"><img class="qr" src="./images/qr_paper.png"></a><a class="n" href="https://link.springer.com/content/pdf/10.1186/s40323-026-00323-y.pdf">Paper</a></div><div class="q"><a href="https://www.linkedin.com/in/miguel-urena-pliego/"><img class="qr" src="./images/qr_linkedin.png"></a><a class="n" href="https://www.linkedin.com/in/miguel-urena-pliego/">Miguel Ureña</a></div><div class="q"><a href="https://www.linkedin.com/in/javier-sempere/"><img class="qr" src="./images/qr_javier.png"></a><a class="n" href="https://www.linkedin.com/in/javier-sempere/">Javier Sempere</a></div></div>
 
-<div class="logorow"><img class="" src="./logos/logo_MediaLab.png" alt="MediaLab"><img class="" src="./logos/logo_CityScience.png" alt="CityScience"><img class="" src="./logos/logo_UPM.png" alt="UPM"><img class="" src="./logos/logo_Caminos.png" alt="Caminos"><img class="sq" src="./logos/logo_detektia.png" alt="detektia"></div>
+<div class="logorow"><img class="" src="./logos/logo_MediaLab.png" alt="MediaLab"><img class="" src="./logos/logo_CityScience.png" alt="CityScience"><img class="" src="./logos/logo_UPM.png" alt="UPM"><img class="" src="./logos/logo_Caminos.png" alt="Caminos"><img class="" src="./logos/logo_AGA.png" alt="AGA"><img class="sq" src="./logos/logo_detektia.png" alt="detektia"></div>
 
 <script>
 (function(){function s(){var any=document.querySelector('.bespoke-marp-active');document.querySelectorAll('section video').forEach(function(v){var w=v.closest('.bespoke-marp-slide');var on=!any||(w&&w.classList.contains('bespoke-marp-active'));if(on){v.muted=true;if(v.paused)v.play().catch(function(){})}else if(!v.paused){v.pause();v.currentTime=0}})}
