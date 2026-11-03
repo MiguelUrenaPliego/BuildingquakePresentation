@@ -64,11 +64,13 @@ def fragility(inputs=None):
     s += t(424, CY1 - 26, "Fragility curve", 26, WHITE, "end")
     return s
 
+PCT = round((CY0 - fy(438)) / (CY0 - CY1) * 100)
+
 def inputs(peak):
     px, py = peak
     xm = 438
     yc = fy(xm)
-    top = 40
+    top = 12
     s = (f'<polyline points="{px:.1f},{py:.1f} {px:.1f},{top} {xm},{top} {xm},{yc-12:.1f}" fill="none" stroke="{AMBER}" stroke-width="4" stroke-dasharray="9 7"/>'
          f'<polygon points="{xm-9},{yc-14:.1f} {xm+9},{yc-14:.1f} {xm},{yc:.1f}" fill="{AMBER}"/>'
          f'<circle cx="{xm}" cy="{yc:.1f}" r="8" fill="{WHITE}"/>'
@@ -79,9 +81,13 @@ def inputs(peak):
     s += f'<line x1="{xm}" y1="{CY0}" x2="{xm}" y2="{CY0-8}" stroke="{AMBER}" stroke-width="4"/>'
     return s
 
-def slide(terms, svg_body):
+def result_caption():
+    x = COL[1]
+    return (arrow_down(x) + t(x + 6, 100, f"{PCT}% damage", 28, AMBER) + t(x + 6, 134, "probability", 28, AMBER))
+
+def slide(terms, svg_body, risk_orange=False):
     names = [terms[0], "=", terms[1], "×", terms[2]]
-    cells = ''.join(f'<div class="rt{" op" if n in ("=","×") else ""}{" a" if i>0 and n not in ("=","×") else ""}">{n}</div>' for i, n in enumerate(names))
+    cells = ''.join(f'<div class="rt{" op" if n in ("=","×") else ""}{" a" if (i>0 or risk_orange) and n not in ("=","×") else ""}">{n}</div>' for i, n in enumerate(names))
     return (f'<!-- _class: risk -->\n\n<div class="body"><div class="riskbox"><div class="eqrow">{cells}</div>'
             f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0,34)">{svg_body}</g></svg></div></div>\n')
 
@@ -92,7 +98,7 @@ S = [
   slide(("Risk", "Exposure", "Hazard"), caption(1, "Damage") + caption(3, "Buildings") + caption(5, "Earthquake")),
   slide(("Risk", "Exposure", "Earthquake"), caption(1, "Damage") + caption(3, "Buildings") + shake),
   slide(("Risk", "Buildings", "Earthquake"), caption(1, "Damage") + fragility() + shake),
-  slide(("Risk", "Buildings", "Earthquake"), caption(1, "Damage") + fragility() + shake + inputs(peak)),
+  slide(("Risk", "Buildings", "Earthquake"), result_caption() + fragility() + shake + inputs(peak), risk_orange=True),
 ]
 
 md = open("presentation.md").read()

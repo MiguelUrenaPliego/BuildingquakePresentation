@@ -61,10 +61,6 @@ section.media .body video, section.media .body img.fig { width:1280px; height:62
 .eqgrid .arrow { font-size:46px; color:var(--accent); line-height:1.1; }
 .eqgrid .s { font-size:42px; color:var(--fg); }
 
-/* picture slides: the picture sits below the title (it is not a video the title can float over) */
-section.media.figure .body { top:112px; height:516px; }
-section.media.figure .body img.fig { width:1280px; height:516px; }
-
 /* slimmer footer */
 section { padding-bottom:70px; }
 footer { bottom:10px; height:44px; gap:22px; font-size:14px; }
@@ -127,6 +123,18 @@ section.titleslide .collab { white-space:nowrap; font-size:21px; }
 .qrs img.qr { width:190px; height:190px; padding:12px; }
 .qrs a.n { font-size:26px; margin-top:12px; white-space:nowrap; }
 
-/* dark band behind the title for videos with a light first frame */
-section.media.scrim h1 { left:0; top:0; width:1280px; box-sizing:border-box; padding:32px 80px 46px; text-shadow:none;
-  background:linear-gradient(to bottom, rgba(0,0,0,.88) 0%, rgba(0,0,0,.88) 62%, rgba(0,0,0,0) 100%); }
+/* videos with a light first frame: title on a flat translucent bar at the top */
+section.media.scrim h1 { left:0; top:0; width:1280px; box-sizing:border-box; padding:16px 80px 18px; margin:0; color:#fff; text-shadow:none; background:rgba(0,0,0,.58); }
+
+/* media slides: edge-to-edge picture/video, translucent footer laid over it */
+section.media .body { top:0; left:0; width:1280px; height:720px; }
+section.media .body video, section.media .body img.fig { width:1280px; height:720px; object-fit:cover; }
+section.media footer { left:0; right:0; bottom:0; height:56px; padding:0 80px; border-top:0; z-index:5;
+  background:linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.34)); }
+section.media::after { z-index:6; bottom:18px; text-shadow:0 1px 4px #000; }
+section.media footer .who { text-shadow:0 1px 4px #000; color:#d8d8d8; }
+
+/* white line on top of every footer */
+footer { border-top:1px solid #fff; }
+section.media footer { border-top:0; }
+section.media footer::before { content:""; position:absolute; top:0; left:80px; right:80px; border-top:1px solid #fff; }
