@@ -124,7 +124,7 @@ section.titleslide .collab { white-space:nowrap; font-size:21px; }
 .qrs a.n { font-size:26px; margin-top:12px; white-space:nowrap; }
 
 /* videos with a light first frame: title on a flat translucent bar at the top */
-section.media.scrim h1 { left:0; top:0; width:1280px; box-sizing:border-box; padding:16px 80px 18px; margin:0; color:#fff; text-shadow:none; background:rgba(0,0,0,.58); }
+section.media.scrim h1 { left:0; top:0; width:1280px; box-sizing:border-box; padding:16px 80px 18px; margin:0; color:#fff; text-shadow:none; background:#000; }
 
 /* media slides: edge-to-edge picture/video, translucent footer laid over it */
 section.media .body { top:0; left:0; width:1280px; height:720px; }
@@ -138,3 +138,15 @@ section.media footer .who { text-shadow:0 1px 4px #000; color:#d8d8d8; }
 footer { border-top:1px solid #fff; }
 section.media footer { border-top:0; }
 section.media footer::before { content:""; position:absolute; top:0; left:80px; right:80px; border-top:1px solid #fff; }
+
+/* six QR codes */
+.qrs { gap:22px; }
+.qrs .q { width:168px; }
+.qrs img.qr { width:168px; height:168px; padding:10px; }
+.qrs a.n { font-size:23px; margin-top:10px; }
+
+/* INSAR slide: footer bar fully opaque too */
+section.media.scrim footer { background:#000; }
+
+/* INSAR slide: video sits 56 px higher so it ends exactly where the opaque footer starts; its top is cropped (behind the title bar) */
+section.media.scrim .body { top:-56px; }

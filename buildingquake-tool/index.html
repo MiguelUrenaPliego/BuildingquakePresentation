@@ -4,11 +4,21 @@
 <meta charset="utf-8">
 <title>Buildingquake tool</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="0; url=https://cs-futurecities.media.mit.edu/buildingquake/">
-<link rel="canonical" href="https://cs-futurecities.media.mit.edu/buildingquake/">
-<script>location.replace("https://cs-futurecities.media.mit.edu/buildingquake/" + location.search + location.hash);</script>
+<!-- Destination lives in ../redirects.json (key "buildingquake-tool"): edit that file to change where this page goes.
+     FALLBACK below is only used if redirects.json cannot be read. -->
+<noscript><meta http-equiv="refresh" content="0; url=https://cs-futurecities.media.mit.edu/buildingquake/"></noscript>
+<script>
+(function () {
+  var KEY = "buildingquake-tool", FALLBACK = "https://cs-futurecities.media.mit.edu/buildingquake/";
+  function go(u) { location.replace(u + location.search + location.hash); }
+  fetch("../redirects.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (m) { go(m[KEY] || FALLBACK); })
+    .catch(function () { go(FALLBACK); });
+})();
+</script>
 </head>
 <body style="background:#000;color:#fff;font-family:Helvetica,Arial,sans-serif">
-<p>Redirecting to the <a style="color:#1e90ff" href="https://cs-futurecities.media.mit.edu/buildingquake/">Buildingquake tool</a>…</p>
+<p>Redirecting to <a style="color:#1e90ff" href="https://cs-futurecities.media.mit.edu/buildingquake/">the Buildingquake tool</a>…</p>
 </body>
 </html>

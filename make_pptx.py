@@ -44,12 +44,13 @@ def build(with_videos, out, posters):
         if with_videos:
             vw = int(subprocess.check_output(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width', '-of', 'csv=p=0', 'videos/' + name]))
             crop = re.search(r'inset\(0 0 0 (\d+)px\)', m.group(1)); c = int(crop.group(1)) / vw if crop else 0.0
-            mv = s.shapes.add_movie('videos/' + name, 0, 0, SW, SH, poster_frame_image=posters[name], mime_type='video/mp4')
+            top = -int(SH * 56 / 720) if 'media scrim' in p else 0   # INSAR slide: video raised 56 px, top cropped
+            mv = s.shapes.add_movie('videos/' + name, 0, top, SW, SH, poster_frame_image=posters[name], mime_type='video/mp4')
             if c:
                 blip = mv._element.find(f'.//{{{A}}}blip'); sr = etree.Element(f'{{{A}}}srcRect'); sr.set('l', str(int(c * 100000))); blip.addnext(sr)
             s._element.append(timing(mv.shape_id))
         else:
-            s.notes_slide.notes_text_frame.text = f'Insert video: videos/{name} (Insert > Video; stretch over the whole slide, Arrange > Send to back; autoplay + loop in Format options).'
+            s.notes_slide.notes_text_frame.text = f'Insert video: videos/{name} (Insert > Video; stretch over the whole slide{', then move it up by about 8% of the slide height so it ends at the footer' if 'media scrim' in p else ''}, Arrange > Send to back; autoplay + loop in Format options).'
         s.shapes.add_picture(overlay, 0, 0, SW, SH)
     prs.save(out); print(out, os.path.getsize(out) // 1048576, 'MB')
 
