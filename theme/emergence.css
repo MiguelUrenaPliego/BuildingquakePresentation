@@ -1,0 +1,104 @@
+/* @theme emergence */
+@import 'default';
+:root { --bg:#000; --fg:#fff; --muted:#8a8a8a; --accent:#ffb000; }
+section { width:1280px; height:720px; box-sizing:border-box; background:var(--bg); color:var(--fg);
+  font-family:'Helvetica',Arial,'Liberation Sans',sans-serif; font-size:30px;
+  padding:50px 80px 110px 80px; display:flex; flex-direction:column; }
+h1 { font-size:50px; margin:0 0 10px 0; flex-shrink:0; color:var(--fg); }
+.body { flex:1; display:flex; align-items:center; justify-content:center; min-height:0; }
+.body video, .body img.fig { max-width:100%; max-height:100%; object-fit:contain; }
+.body img.card { max-height:100%; max-width:100%; background:#fff; border-radius:10px; padding:10px; box-sizing:border-box; }
+
+footer { position:absolute; left:80px; right:80px; bottom:28px; height:64px; border-top:1px solid rgba(255,255,255,.4);
+  padding:0; margin:0; display:flex; align-items:center; gap:28px; font-size:17px; color:#e6e6e6; text-shadow:0 1px 6px #000; }
+footer img { filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)); height:46px; width:auto; object-fit:contain; }
+footer img.wide { height:40px; }
+footer img[alt="UPM"], footer img[alt="Caminos"] { height:54px; }
+footer .who { margin-left:auto; margin-right:90px; }
+section::after { content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  font-size:17px; font-weight:bold; color:var(--fg); right:80px; bottom:44px; text-shadow:0 1px 6px #000; }
+
+/* title & closing: big logos, no footer */
+section.titleslide, section.closing { justify-content:center; align-items:center; text-align:center; }
+section.titleslide footer, section.closing footer, section.titleslide::after, section.closing::after { display:none; }
+section.titleslide h1 { font-size:110px; margin:0 0 14px; letter-spacing:1px; }
+section.titleslide h2 { font-size:34px; font-weight:400; color:var(--accent); margin:0; }
+.logorow { position:absolute; left:60px; right:60px; bottom:50px; height:130px; display:flex; align-items:center; justify-content:space-between; }
+.logorow img { height:100px; width:auto; max-width:230px; object-fit:contain; }
+.logorow img.sq { height:120px; }
+
+/* formula slides */
+.eq { font-size:96px; font-weight:700; text-align:center; }
+.eq span.a { color:var(--accent); }
+.cols { display:flex; align-items:flex-start; justify-content:center; gap:40px; width:100%; }
+.col { display:flex; flex-direction:column; align-items:center; width:300px; }
+.col .t { font-size:68px; font-weight:700; }
+.col .op { font-size:68px; font-weight:700; }
+.col .arrow { font-size:50px; color:var(--accent); margin:8px 0; }
+.col .s { font-size:42px; color:var(--accent); }
+.opcol { width:50px; font-size:68px; font-weight:700; text-align:center; padding-top:0; }
+.big { font-size:80px; font-weight:700; text-align:center; }
+
+/* closing */
+section.closing h1 { font-size:80px; margin:0 0 30px; }
+.qrs { display:flex; gap:70px; justify-content:center; margin-top:0; margin-bottom:150px; }
+.qrs .q { display:flex; flex-direction:column; align-items:center; width:260px; }
+.qrs img.qr { width:230px; height:230px; background:#fff; padding:14px; border-radius:16px; box-sizing:border-box; width:250px; height:250px; }
+.qrs .n { font-size:32px; font-weight:700; margin-top:14px; }
+section.closing .logorow { bottom:36px; }
+
+/* media slides: media fills the slide above the footer; title floats over it */
+section.media { padding:0; }
+section.media h1 { position:absolute; left:80px; top:40px; z-index:2; margin:0; text-shadow:0 2px 12px #000, 0 0 4px #000; }
+section.media .body { position:absolute; left:0; top:0; width:1280px; height:628px; z-index:1; }
+section.media .body video, section.media .body img.fig { width:1280px; height:628px; max-width:none; max-height:none; object-fit:contain; background:transparent; padding:0; border-radius:0; }
+
+/* risk equation: identical position on both slides */
+.eqgrid { display:grid; grid-template-columns:auto auto auto auto auto; column-gap:34px; align-items:start; justify-items:center; white-space:nowrap; }
+.eqgrid .t { font-size:84px; font-weight:700; line-height:1.1; }
+.eqgrid .t.a { color:var(--accent); }
+.eqgrid .cap { display:flex; flex-direction:column; align-items:center; }
+.eqgrid .arrow { font-size:46px; color:var(--accent); line-height:1.1; }
+.eqgrid .s { font-size:42px; color:var(--fg); }
+
+/* picture slides: the picture sits below the title (it is not a video the title can float over) */
+section.media.figure .body { top:112px; height:516px; }
+section.media.figure .body img.fig { width:1280px; height:516px; }
+
+/* slimmer footer */
+section { padding-bottom:70px; }
+footer { bottom:10px; height:44px; gap:22px; font-size:14px; }
+footer img { height:30px; }
+footer img[alt="UPM"] { height:38px; }
+footer .who { margin-right:80px; }
+section::after { font-size:14px; bottom:22px; }
+section.media .body { height:664px; }
+section.media .body video, section.media .body img.fig { height:664px; }
+
+/* four QR codes with clickable labels */
+.qrs { gap:46px; }
+.qrs .q { width:230px; }
+.qrs img.qr { width:230px; height:230px; }
+.qrs a { color:var(--fg); text-decoration:none; }
+.qrs a.n { font-size:32px; font-weight:700; margin-top:14px; border-bottom:2px solid var(--accent); }
+
+/* two images side by side on a white canvas (images have white backgrounds) */
+section.media.light h1 { color:#111; text-shadow:none; }
+section.media.light .body { background:#fff; display:flex; align-items:flex-end; justify-content:center; gap:0; }
+section.media .body.two img.fig { flex:1 1 0; width:auto; min-width:0; height:600px; max-height:600px; }
+section.media .body.two img.fig:first-child { flex:1.35 1 0; }
+
+/* progressive Risk slides: identical layout, things appear */
+section.risk .body { align-items:center; }
+.riskbox { width:1080px; height:470px; display:flex; flex-direction:column; }
+.eqrow { display:grid; grid-template-columns:180px 50px 400px 50px 400px; height:100px; align-items:center; text-align:center; }
+.eqrow .rt { font-size:68px; font-weight:700; white-space:nowrap; line-height:1; }
+.eqrow .rt.a { color:var(--accent); }
+.riskbox svg { width:1080px; height:360px; flex-shrink:0; }
+
+/* image left, drawn plot right, on the dark background */
+section.fig2 { padding:40px 50px 70px; }
+section.fig2 .body { gap:36px; align-items:center; }
+section.fig2 .body img.fig { flex:1.35 1 0; min-width:0; max-height:100%; width:auto; object-fit:contain; }
+section.fig2 .body .plot { flex:1 1 0; min-width:0; height:100%; display:flex; align-items:center; }
+section.fig2 .body .plot svg { width:100%; max-height:100%; }

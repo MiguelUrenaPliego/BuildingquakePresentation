@@ -1,0 +1,7 @@
+# generated exports and build leftovers
+export/
+slides_png/
+presentation.html
+*.log
+nohup.out
+slides_export/
