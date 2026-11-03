@@ -121,7 +121,7 @@ footer: '<img src="./logos/sym_MediaLab.png" alt="MediaLab"><img src="./logos/sy
 
 ---
 
-<!-- _class: media -->
+<!-- _class: media scrim -->
 
 # INSAR: Movements
 
@@ -149,7 +149,7 @@ footer: '<img src="./logos/sym_MediaLab.png" alt="MediaLab"><img src="./logos/sy
 
 # Hazard
 
-<div class="body"><video style="object-view-box:inset(0 0 0 9px)" src="./videos/hazard.mp4" autoplay loop muted playsinline></video></div>
+<div class="body"><video src="./videos/hazard.mp4" autoplay loop muted playsinline></video></div>
 
 ---
 
